@@ -2,9 +2,8 @@
 
 @section('content')
     <!-- You are: (shop domain name) -->
-    <p>You are: {{ Auth::user()->name }}</p>
-    <a href="{{route('product')}}">GO</a>
-    HIII
+    THIS iS PRODUCT PAGE
+    <a href="/">GO</a>
 @endsection
 
 @section('scripts')
@@ -17,8 +16,9 @@
         var Button = actions.Button;
         var Redirect = actions.Redirect;
         var titleBarOptions = {
-            title: 'My App',
+            title: 'Product',
         };
         var myTitleBar = TitleBar.create(app, titleBarOptions);
+        alert('HI');
     </script>
 @endsection

@@ -17,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('wishlist')->group(function () {
+    Route::get('/check','WishlistController@check');
+    Route::post('/add','WishlistController@add');
+    Route::post('/bulk-check','WishlistController@bulkCheck');
+
+    Route::post('/remove','WishlistController@remove');
+    Route::get('/get-products/{customer_id}','WishlistController@getAllProduct');
+
+});
+
+Route::prefix('review')->group(function () {
+    Route::get('/get-review','ReviewController@getReview');
+});

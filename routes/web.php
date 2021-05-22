@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('http://mangitmaharjan.com.np/');
 });
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware(['auth.shopify'])->name('home');
+
+
+// Route::middleware(['auth.shopify'])->group(function () {
+//     Route::get('/products', 'ProductController@index' )->name('product');
+// });
+
+Route::get('/p', 'ExtraController@index' );
+Route::post('/pd', 'ExtraController@submit' )->name('form-submit');
+Route::get('/review','ReviewController@review');
